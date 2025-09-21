@@ -1,0 +1,697 @@
+﻿<UserControl x:Class="iCos5BACnetScheduleED.View.ViewConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dataType="clr-namespace:iCos5.BACnet.Zenon;assembly=iCos5BACnet"
+             xmlns:control="clr-namespace:iCos5BACnetScheduleED.View.Control"
+             xmlns:converter="clr-namespace:iCos5BACnetScheduleED.View.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800"
+             x:Name="thisControl"
+             Loaded="UserControl_Loaded">
+
+  <!-- Resources -->
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Assets/ControlResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- Expand Storyboard -->
+      <Storyboard x:Key="ExpandLockUnlock" 
+                  BeginTime="00:00:00.000" 
+                  Duration="00:00:00.300">
+        <DoubleAnimation Storyboard.TargetName="ExpandDefaultExceptionPriority" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="0" 
+                         To="74"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <DoubleAnimation Storyboard.TargetName="ExpandSchedulePairLimitInterval" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="0" 
+                         To="74"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <DoubleAnimation Storyboard.TargetName="ExpandStackCEL" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="0" 
+                         To="74"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+      </Storyboard>
+      <Storyboard x:Key="CollapseLockUnlock"
+                  BeginTime="00:00:00.000" 
+                  Duration="00:00:00.300">
+        <DoubleAnimation Storyboard.TargetName="ExpandDefaultExceptionPriority" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="74"
+                         To="0"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <DoubleAnimation Storyboard.TargetName="ExpandSchedulePairLimitInterval" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="74" 
+                         To="0"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <DoubleAnimation Storyboard.TargetName="ExpandStackCEL" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="74" 
+                         To="0"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+      </Storyboard>
+      <Storyboard x:Key="ExpandStoryCEL" 
+                  BeginTime="00:00:00.000" 
+                  Duration="00:00:00.300">
+        <DoubleAnimation Storyboard.TargetName="ExpandArrowCEL" 
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" 
+                         From="0" To="180" 
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <DoubleAnimation Storyboard.TargetName="ExpandStackCEL" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="74" 
+                         To="{Binding ActualHeight, Source={x:Reference ExpandStackCEL}}"
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderCEL" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.000">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="0" BottomRight="0" TopLeft="3" TopRight="3"/>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderBCEL" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="0" BottomRight="0" TopLeft="3" TopRight="3"/>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderCEL" 
+                                       Storyboard.TargetProperty="Margin">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.000">
+            <DiscreteObjectKeyFrame.Value>
+              <Thickness>5 2 5 0</Thickness>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+      </Storyboard>
+      <Storyboard x:Key="CollapseStoryCEL"
+                  BeginTime="00:00:00.000" 
+                  Duration="00:00:00.300">
+        <DoubleAnimation Storyboard.TargetName="ExpandArrowCEL" 
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" 
+                         From="180" To="0" 
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <DoubleAnimation Storyboard.TargetName="ExpandStackCEL" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="{Binding Height, Source={x:Reference ExpandStackCEL}}"
+                         To="74" 
+                         BeginTime="00:00:00.000" 
+                         Duration="00:00:00.300"/>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderCEL" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="3" BottomRight="3" TopLeft="3" TopRight="3"/>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderBCEL" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="3" BottomRight="3" TopLeft="3" TopRight="3"/>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderCEL" 
+                                       Storyboard.TargetProperty="Margin">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <Thickness>5 2 5 2</Thickness>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+      </Storyboard>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <!-- Main -->
+  <Border x:Name="MainBorder">
+    <StackPanel>
+
+      <!-- Exception Schedule Use -->
+      <Border Height="70"
+              Margin="5 4 5 2"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_lightningDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="예외 스케줄 활성"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="예외 스케줄 활성 여부를 선택하십시오."
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal" 
+                          HorizontalAlignment="Right" 
+                          Margin="10 0 40 0">
+                <mah:ToggleSwitch IsOn="{Binding IsActiveExceptionTab, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                  OffContent="비활성" 
+                                  OnContent="활성" 
+                                  ContentDirection="LeftToRight"/>
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Default Exception Priority -->
+      <StackPanel x:Name="ExpandDefaultExceptionPriority"
+                  Orientation="Vertical" 
+                  Height="0">
+        <Border Height="70"
+                Style="{StaticResource BorderConfig}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="18"
+                   Source="{StaticResource Bootstrap_list_olDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="기본 예외 우선순위"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="예외 우선순위 디폴트 값을 설정하십시오."
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <mah:NumericUpDown x:Name="DefaultExceptionPriority" 
+                                     Height="30" Width="90"
+                                     Style="{StaticResource NumericUpDownDefault}"
+                                     Maximum="20"
+                                     Minimum="0"
+                                     Value="{Binding DefaultExceptionPriority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                  <Slider Width="300"
+                          Margin="10 10 0 10"
+                          Orientation="Horizontal"
+                          IsSnapToTickEnabled="True"
+                          TickPlacement="BottomRight"
+                          TickFrequency="1"
+                          Maximum="20"
+                          Minimum="0"
+                          Value="{Binding Value, ElementName=DefaultExceptionPriority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+      </StackPanel>
+
+      <!-- SchedulePair Limit Interval -->
+      <StackPanel x:Name="ExpandSchedulePairLimitInterval"
+                  Orientation="Vertical" 
+                  Height="0">
+        <Border Height="70"
+                Style="{StaticResource BorderConfig}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="18"
+                   Source="{StaticResource Bootstrap_clock_historyDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="스케줄 시간 최소 간격"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="스케줄의 작동 최소 시간 간격을 설정하십시오.(분)"
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <mah:NumericUpDown x:Name="SchedulePairLimitInterval" 
+                                     Height="30" Width="90"
+                                     Style="{StaticResource NumericUpDownDefault}"
+                                     Maximum="30"
+                                     Minimum="0"
+                                     Value="{Binding SchedulePairLimitInterval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                  <Slider Width="300"
+                          Margin="10 10 0 10"
+                          Orientation="Horizontal"
+                          IsSnapToTickEnabled="True"
+                          TickPlacement="BottomRight"
+                          TickFrequency="1"
+                          Maximum="30"
+                          Minimum="0"
+                          Value="{Binding SchedulePairLimitInterval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+      </StackPanel>
+
+      <!-- CEL Item -->
+      <StackPanel x:Name="ExpandStackCEL"
+                  Orientation="Vertical" 
+                  Height="0">
+        <Border x:Name="ExpandBorderCEL"
+                Height="70"
+                MouseLeftButtonDown="ExpandCEL_MouseLeftButtonDown"
+                Style="{StaticResource BorderExpander}">
+          <Border x:Name="ExpandBorderBCEL"
+                  Style="{StaticResource BorderExpanderB}">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Column="0" 
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Margin="18"
+                     Source="{StaticResource Bootstrap_journal_textDrawingImage}" />
+              <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <TextBlock Grid.Row="0" 
+                             Text="로그(CEL) 설정"
+                             FontSize="14"
+                             Style="{StaticResource TextBlockTitle}"/>
+                  <TextBlock Grid.Row="1"
+                             Text="제논 이벤트 로그(CEL)를 설정하십시오."
+                             FontSize="12"
+                             Style="{StaticResource TextblockDesc}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                  <StackPanel Orientation="Horizontal"
+                              HorizontalAlignment="Right"
+                              Margin="10 0 10 0">
+                    <Grid Width="400"
+                          Margin="0 0 10 0">
+                      <TextBlock Width="80" 
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 FontSize="14"
+                                 Text="{Binding IsOn, ElementName=EnableCEL, Converter={converter:CELEnableString}}"/>
+                    </Grid>
+                    <Image x:Name="ExpandArrowCEL"
+                           Height="20" Width="20"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           RenderTransformOrigin="0.5,0.5" 
+                           Source="{StaticResource Bootstrap_chevron_downDrawingImage}">
+                      <Image.RenderTransform>
+                        <RotateTransform />
+                      </Image.RenderTransform>
+                    </Image>
+                  </StackPanel>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Border>
+        </Border>
+        <Border Height="50"
+                Style="{StaticResource BorderSubItem}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="32 0 18 0"
+                   Source="{StaticResource Bootstrap_check2_squareDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="CEL 로깅 사용"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="제논 CEL 로깅을 활성화 합니다."
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <mah:ToggleSwitch x:Name="EnableCEL" 
+                                    IsOn="{Binding EnableCEL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    OffContent="비활성"
+                                    OnContent="활성" 
+                                    ContentDirection="LeftToRight" 
+                                    Toggled="EnableCEL_Toggled"/>
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+        <Border Height="50"
+                Style="{StaticResource BorderSubItem}"
+                IsEnabled="{Binding IsOn, ElementName=EnableCEL}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="32 0 18 0"
+                   Source="{StaticResource Bootstrap_ui_radiosDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="그룹"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="로그 그룹을 선택합니다."
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <ComboBox Height="32" Width="258"
+                            Style="{StaticResource ComboBoxDefault}"
+                            Text="{Binding CELGroupName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ItemsSource="{Binding CELGroups}"/>
+                  <Button Content="+" 
+                          Height="32" Width="32"
+                          Margin="10 0 0 0"
+                          Style="{StaticResource ButtonDefault}"
+                          Click="AddCELGroup_Click"/>
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+      </StackPanel>
+
+      <!-- BACnet Device List -->
+      <Border x:Name="BACnetDeviceList" 
+              Margin="5 2 5 4"
+              Style="{StaticResource BorderConfig}">
+        <Border.Height>
+          <MultiBinding Converter="{converter:DeviceBorderHeight}">
+            <Binding Path="ActualHeight" ElementName="MainBorder"/>
+            <Binding Path="IsExpandCEL" ElementName="thisControl"/>
+            <Binding Path="IsLock" ElementName="thisControl"/>
+          </MultiBinding>
+        </Border.Height>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="1*"/>
+          </Grid.RowDefinitions>
+          
+          <!-- BACnet Device Header -->
+          <Border Grid.Row="0"
+                  BorderBrush="{StaticResource ColorBorder}"
+                  BorderThickness="0 0 0 1">
+            <Grid Grid.Row="0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Column="0" 
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Margin="18"
+                     Source="{StaticResource Bootstrap_calendar_checkDrawingImage}"/>
+              <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <TextBlock Grid.Row="0" 
+                             Text="스케출 설정"
+                             FontSize="14"
+                             Style="{StaticResource TextBlockTitle}"/>
+                  <TextBlock Grid.Row="1"
+                             Text="스케줄을 위한 변수 및 함수를 등록합니다."
+                             FontSize="12"
+                             Style="{StaticResource TextblockDesc}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                  <StackPanel Grid.Row="0"
+                              Orientation="Horizontal"
+                              HorizontalAlignment="Right">
+                    <Button Height="36" Width="110"
+                            Margin="10 0 10 0"
+                            Style="{StaticResource ButtonDefault}"
+                            Click="BACnetDeviceListUpdate_Click">
+                      <Grid VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="24"/>
+                          <ColumnDefinition Width="66"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Source="{StaticResource Bootstrap_arrow_repeatDrawingImage}"
+                               Margin="2"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="목록갱신"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="14"/>
+                      </Grid>
+                    </Button>
+                    <Button Height="36" Width="110"
+                            Margin="10 0 40 0"
+                            Style="{StaticResource ButtonDefault}"
+                            Click="BACnetDeviceListApply_Click">
+                      <Grid VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="24"/>
+                          <ColumnDefinition Width="66"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Source="{StaticResource Bootstrap_check2_squareDrawingImage}"
+                               Margin="2"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="스케줄적용"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="14"/>
+                      </Grid>
+                    </Button>
+                  </StackPanel>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Border>
+          
+          <!-- BACnet Device Body -->
+          <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1*"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1"
+                          Margin="1 0 1 0"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Stretch"
+                          Background="LightGray"
+                          ShowsPreview="True"
+                          Width="2"/>
+
+            <!-- BACnet Device Treeview -->
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="1*"/>
+              </Grid.RowDefinitions>
+              <Border Grid.Row="0"
+                      BorderThickness="0 0 0 2"
+                      BorderBrush="DimGray"
+                      Background="#E9ECEF">
+                <TextBlock Text="스케줄"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           FontWeight="Bold"/>
+              </Border>
+              <TreeView Name="ScheduleDriverTreeview"
+                        Grid.Row="1"
+                        ItemsSource="{Binding BACnetDriverDevices}"
+                        SelectedItemChanged="ScheduleDriverTreeview_SelectedItemChanged">
+                <TreeView.Resources>
+                  <HierarchicalDataTemplate DataType="{x:Type dataType:BACnetScheduleDriver}" 
+                                            ItemsSource="{Binding BACnetDevices}">
+                    <StackPanel Orientation="Horizontal">
+                      <Image Source="{StaticResource Bootstrap_pci_cardDrawingImage}"
+                             Margin="0 0 5 0"/>
+                      <TextBlock>
+                        <TextBlock.Text>
+                          <MultiBinding StringFormat="[{0}]{1}({2})">
+                            <Binding Path="ConnectionName"/>
+                            <Binding Path="DriverIdentification"/>
+                            <Binding Path="BACnetDevices.Count"/>
+                          </MultiBinding>
+                        </TextBlock.Text>
+                      </TextBlock>
+                    </StackPanel>
+                  </HierarchicalDataTemplate>
+                  <HierarchicalDataTemplate DataType="{x:Type dataType:BACnetScheduleDevice}" 
+                                            ItemsSource="{Binding ScheduleVariables}">
+                    <StackPanel Orientation="Horizontal">
+                      <Image Source="{StaticResource Bootstrap_hdd_networkDrawingImage}"
+                             Margin="0 0 5 0"/>
+                      <TextBlock>
+                        <TextBlock.Text>
+                          <MultiBinding StringFormat="[{0}]{1}({2})">
+                            <Binding Path="ProcessId"/>
+                            <Binding Path="DeviceName"/>
+                            <Binding Path="ScheduleVariables.Count"/>
+                          </MultiBinding>
+                        </TextBlock.Text>
+                      </TextBlock>
+                    </StackPanel>
+                  </HierarchicalDataTemplate>
+                  <DataTemplate DataType="{x:Type dataType:ScheduleVariable}">
+                    <StackPanel Orientation="Horizontal">
+                      <Canvas>
+                        <Image Source="{StaticResource Bootstrap_journal_textDrawingImage}"/>
+                        <Image Source="{StaticResource exclamation_triangleR}">
+                          <Image.Visibility>
+                            <MultiBinding Converter="{converter:ScheduleVariableWarningVisibility}">
+                              <Binding Path="Weekly"/>
+                              <Binding Path="Exception"/>
+                            </MultiBinding>
+                          </Image.Visibility>
+                        </Image>
+                      </Canvas>
+                      <TextBlock Text="{Binding InstanceID, StringFormat=Schedule ID : {0}}"
+                                 Margin="20 0 0 0"/>
+                    </StackPanel>
+                  </DataTemplate>
+                </TreeView.Resources>
+              </TreeView>
+            </Grid>
+
+            <!-- BACnet Device Treeview Detail -->
+            <Grid Grid.Column="2">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="1*"/>
+              </Grid.RowDefinitions>
+              <Border Grid.Row="0"
+                      BorderThickness="0 0 0 2"
+                      BorderBrush="DimGray"
+                      Background="#E9ECEF">
+                <TextBlock Text="상세보기"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           FontWeight="Bold"/>
+              </Border>
+              <control:DeviceScheduleDetail x:Name="DeviceScheduleDetailControl"
+                                            Grid.Row="1"/>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+    </StackPanel>
+  </Border>
+</UserControl>

@@ -1,0 +1,703 @@
+﻿<UserControl x:Class="iCos5CSPGatewayED.View.ViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:icos="clr-namespace:iCos5.CSPGateway;assembly=iCos5CSPGateway"
+             xmlns:converter="clr-namespace:iCos5CSPGatewayED.View.Converter"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d">
+
+  <!-- Resources -->
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Assets/ControlResources.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- Expand Storyboard -->
+      <Storyboard x:Key="ExpandStoryMannedType" 
+                  BeginTime="00:00:00.000" 
+                  Duration="00:00:00.300">
+        <DoubleAnimation Storyboard.TargetName="ExpandArrowMannedType" 
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" 
+                         From="0" To="180" BeginTime="00:00:00.000" Duration="00:00:00.300" />
+        <DoubleAnimation Storyboard.TargetName="ExpandStackMannedType" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="74" 
+                         To="{Binding ActualHeight, Source={x:Reference ExpandStackMannedType}}"
+                         BeginTime="00:00:00.000" Duration="00:00:00.300" />
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderMannedType" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.000">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="0" BottomRight="0" TopLeft="3" TopRight="3" />
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderBMannedType" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="0" BottomRight="0" TopLeft="3" TopRight="3" />
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderMannedType" 
+                                       Storyboard.TargetProperty="Margin">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.000">
+            <DiscreteObjectKeyFrame.Value>
+              <Thickness>5 2 5 0</Thickness>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+      </Storyboard>
+      <Storyboard x:Key="CollapseStoryMannedType"
+                  BeginTime="00:00:00.000" 
+                  Duration="00:00:00.300">
+        <DoubleAnimation Storyboard.TargetName="ExpandArrowMannedType" 
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" 
+                         From="180" To="0" BeginTime="00:00:00.000" Duration="00:00:00.300" />
+        <DoubleAnimation Storyboard.TargetName="ExpandStackMannedType" 
+                         Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                         From="{Binding Height, Source={x:Reference ExpandStackMannedType}}"
+                         To="74" 
+                         BeginTime="00:00:00.000" Duration="00:00:00.300" />
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderMannedType" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="3" BottomRight="3" TopLeft="3" TopRight="3" />
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderBMannedType" 
+                                       Storyboard.TargetProperty="CornerRadius">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <CornerRadius BottomLeft="3" BottomRight="3" TopLeft="3" TopRight="3" />
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandBorderMannedType" 
+                                       Storyboard.TargetProperty="Margin">
+          <DiscreteObjectKeyFrame KeyTime="00:00:00.300">
+            <DiscreteObjectKeyFrame.Value>
+              <Thickness>5 2 5 2</Thickness>
+            </DiscreteObjectKeyFrame.Value>
+          </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+      </Storyboard>
+
+      <!-- Enum Object -->
+      <ObjectDataProvider x:Key="BellSounds"
+                          ObjectType="{x:Type sys:Enum}"
+                          MethodName="GetValues">
+        <ObjectDataProvider.MethodParameters>
+          <x:Type Type="icos:BellSounds"/>
+        </ObjectDataProvider.MethodParameters>
+      </ObjectDataProvider>
+      <ObjectDataProvider x:Key="BellPlayTypes"
+                          ObjectType="{x:Type sys:Enum}"
+                          MethodName="GetValues">
+        <ObjectDataProvider.MethodParameters>
+          <x:Type Type="icos:BellPlayTypes"/>
+        </ObjectDataProvider.MethodParameters>
+      </ObjectDataProvider>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <!-- Main -->
+  <Border x:Name="MainBorder">
+    <StackPanel>
+
+      <!-- Building ID Item -->
+      <Border Height="70"
+              Margin="5 4 5 2"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_buildingDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="빌딩 ID"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="빌딩 ID는 클라우드 탭에서만 변경 가능합니다."
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1"
+                  Width="400"
+                  Margin="10 0 40 0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+
+              <Grid Grid.Column="0"
+                    Visibility="{Binding ActiveInsite, Converter={converter:BoolToVisibility}}">
+                <TextBlock Width="50" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Text="insite :"/>
+                <TextBlock Width="70" 
+                           Margin="50 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Visibility="{Binding IsSingleBuilding, Converter={converter:NBoolToVisibility}}"
+                           Text="다중빌딩"/>
+                <TextBlock Width="70" 
+                           Margin="50 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Visibility="{Binding IsSingleBuilding, Converter={converter:BoolToVisibility}}"
+                           Text="단일빌딩"/>
+                <TextBlock Margin="120 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Visibility="{Binding IsSingleBuilding, Converter={converter:BoolToVisibility}}"
+                           Text="{Binding BuildingID}"/>
+              </Grid>
+
+              <Grid Grid.Column="1"
+                    Visibility="{Binding ActiveBEMS, Converter={converter:BoolToVisibility}}">
+                <TextBlock Width="50" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Text="BEMS :"/>
+                <TextBlock Margin="56 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Text="{Binding BuildingIDBEMS}"/>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Control Enabled Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_wrenchDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="제어 사용"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="제어 기능 활성화 여부를 설정하십시오."
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal" 
+                          HorizontalAlignment="Right" 
+                          Margin="10 0 40 0">
+                <mah:ToggleSwitch x:Name="ActiveSwitch"
+                                  IsOn="{Binding IsUseControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                  OffContent="비활성" 
+                                  OnContent="활성" 
+                                  ContentDirection="LeftToRight"
+                                  Toggled="ActiveSwitch_Toggled"/>
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Flush Period Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}"
+              Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+              IsEnabled="{Binding IsOn, ElementName=ActiveSwitch, Converter={converter:BooleanInverter}}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_trashDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="제어 DB 비우기 주기"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="서버의 제어 DB를 비우는 주기를 설정하십시오.(30 ~ 720 분)"
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal"
+                          HorizontalAlignment="Right"
+                          Margin="10 0 40 0">
+                <mah:NumericUpDown x:Name="FlushPeriod" 
+                                   Height="30" Width="90"
+                                   Style="{StaticResource NumericUpDownDefault}"
+                                   Maximum="720"
+                                   Minimum="30"
+                                   Interval="30"
+                                   Value="{Binding ControlFlushPeriod, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider Width="300"
+                        Margin="10 10 0 10"
+                        Orientation="Horizontal"
+                        IsSnapToTickEnabled="True"
+                        TickPlacement="BottomRight"
+                        TickFrequency="30"
+                        Maximum="720"
+                        Minimum="30"
+                        Value="{Binding Value, ElementName=FlushPeriod, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Polling Period Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}"
+              Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+              IsEnabled="{Binding IsOn, ElementName=ActiveSwitch}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_clockDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="업데이트 주기"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="제어목록 확인 주기를 설정하십시오.(5 ~ 60 초)"
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal"
+                          HorizontalAlignment="Right"
+                          Margin="10 0 40 0">
+                <mah:NumericUpDown x:Name="PollingPeriod" 
+                                   Height="30" Width="90"
+                                   Style="{StaticResource NumericUpDownDefault}"
+                                   Maximum="60"
+                                   Minimum="5"
+                                   Value="{Binding ControlUpdatePeriod, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider Width="300"
+                        Margin="10 10 0 10"
+                        Orientation="Horizontal"
+                        IsSnapToTickEnabled="True"
+                        TickPlacement="BottomRight"
+                        TickFrequency="5"
+                        Maximum="60"
+                        Minimum="5"
+                        Value="{Binding Value, ElementName=PollingPeriod, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Timeout Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}"
+              Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+              IsEnabled="{Binding IsOn, ElementName=ActiveSwitch}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_stopwatchDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="타임아웃"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="제어명령 타임아웃을 설정하십시오.(1 ~ 30 초)"
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal"
+                          HorizontalAlignment="Right"
+                          Margin="10 0 40 0">
+                <mah:NumericUpDown x:Name="Timeout" 
+                                   Height="30" Width="90"
+                                   Style="{StaticResource NumericUpDownDefault}"
+                                   Maximum="30"
+                                   Minimum="1"
+                                   Value="{Binding ControlTimeout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider Width="300"
+                        Margin="10 10 0 10"
+                        Orientation="Horizontal"
+                        IsSnapToTickEnabled="True"
+                        TickPlacement="BottomRight"
+                        TickFrequency="1"
+                        Maximum="30"
+                        Minimum="1"
+                        Value="{Binding Value, ElementName=Timeout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Manned Type Item -->
+      <StackPanel x:Name="ExpandStackMannedType"
+                  Orientation="Vertical" 
+                  Height="74">
+        <Border x:Name="ExpandBorderMannedType"
+                Height="70"
+                MouseLeftButtonDown="ExpandMannedType_MouseLeftButtonDown"
+                Style="{StaticResource BorderExpander}"
+                Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+                IsEnabled="{Binding IsOn, ElementName=ActiveSwitch}">
+          <Border x:Name="ExpandBorderBMannedType"
+                  Style="{StaticResource BorderExpanderB}">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Column="0" 
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Margin="18"
+                     Source="{StaticResource Bootstrap_person_workspaceDrawingImage}"/>
+              <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <TextBlock Grid.Row="0" 
+                             Text="관리자 상주"
+                             FontSize="14"
+                             Style="{StaticResource TextBlockTitle}"/>
+                  <TextBlock Grid.Row="1"
+                             Text="관리자 상주 여부를 선택하십시오."
+                             FontSize="12"
+                             Style="{StaticResource TextblockDesc}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                  <StackPanel Orientation="Horizontal"
+                              HorizontalAlignment="Right"
+                              Margin="10 0 10 0">
+                    <Grid Width="400"
+                          Margin="0 0 10 0">
+                      <TextBlock Width="80" 
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 FontSize="14"
+                                 Text="{Binding IsOn, ElementName=EnableManned, Converter={converter:MannedTypeString}}"/>
+                    </Grid>
+                    <Image x:Name="ExpandArrowMannedType"
+                           Height="20" Width="20"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           RenderTransformOrigin="0.5,0.5" 
+                           Source="{StaticResource Bootstrap_chevron_downDrawingImage}">
+                      <Image.RenderTransform>
+                        <RotateTransform />
+                      </Image.RenderTransform>
+                    </Image>
+                  </StackPanel>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Border>
+        </Border>
+        <Border Height="50"
+                Style="{StaticResource BorderSubItem}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="32 0 18 0"
+                   Source="{StaticResource Bootstrap_person_checkDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="유인 관제 / 무인 관제"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="유인 관제 또는 무인 관제를 선택하십시오."
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <mah:ToggleSwitch x:Name="EnableManned" 
+                                    IsOn="{Binding IsMannedControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    OffContent="무인 관제" 
+                                    OnContent="유인 관제" 
+                                    ContentDirection="LeftToRight"/>
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+        <Border Height="50"
+                Style="{StaticResource BorderSubItem}"
+                Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+                IsEnabled="{Binding IsOn, ElementName=EnableManned}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="32 0 18 0"
+                   Source="{StaticResource Bootstrap_alarmDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="부재중 대기 시간"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="부재중 대기 시간을 설정하십시오.(분)"
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <mah:NumericUpDown x:Name="HoldOnTime" 
+                                     Height="30" Width="90"
+                                     Style="{StaticResource NumericUpDownDefault}"
+                                     Maximum="10"
+                                     Minimum="1"
+                                     Value="{Binding HoldOnTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                  <Slider Width="300"
+                          Margin="10 10 0 10"
+                          Orientation="Horizontal"
+                          IsSnapToTickEnabled="True"
+                          TickPlacement="BottomRight"
+                          TickFrequency="1"
+                          Maximum="10"
+                          Minimum="1"
+                          Value="{Binding Value, ElementName=HoldOnTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+        <Border Height="50"
+                Style="{StaticResource BorderSubItem}"
+                Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+                IsEnabled="{Binding IsOn, ElementName=EnableManned}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="32 0 18 0"
+                   Source="{StaticResource Bootstrap_soundwaveDrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="벨소리"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="제어요청 벨소리를 선택합니다."
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 40 0">
+                  <ComboBox x:Name="BellSoundItem"
+                            Height="32" Width="258"
+                            Style="{StaticResource ComboBoxDefault}"
+                            SelectedItem="{Binding BellSound, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ItemsSource="{Binding Source={StaticResource BellSounds}}"/>
+                  <Button x:Name="PlayBellSound"
+                          Height="32" Width="32"
+                          Margin="10 0 0 0"
+                          Style="{StaticResource ButtonDefault}"
+                          Click="PlayBellSound_Click">
+                    <Image Source="{StaticResource Bootstrap_play_fillDrawingImage}"/>
+                  </Button>
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+        <Border Height="50"
+                Style="{StaticResource BorderSubItem}"
+                Opacity="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={converter:BoolToOpacity}}"
+                IsEnabled="{Binding IsOn, ElementName=EnableManned}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="70"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="32 0 18 0"
+                   Source="{StaticResource Bootstrap_repeat_1DrawingImage}"/>
+            <Grid Grid.Column="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           Text="재생타입"
+                           FontSize="14"
+                           Style="{StaticResource TextBlockTitle}"/>
+                <TextBlock Grid.Row="1"
+                           Text="제어요청 벨소리 재생타입을 선택합니다."
+                           FontSize="12"
+                           Style="{StaticResource TextblockDesc}"/>
+              </Grid>
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="10 0 82 0">
+                  <ComboBox Height="32" Width="258"
+                            Style="{StaticResource ComboBoxDefault}"
+                            SelectedItem="{Binding BellPlayType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ItemsSource="{Binding Source={StaticResource BellPlayTypes}}"/>
+                </StackPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Border>
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</UserControl>

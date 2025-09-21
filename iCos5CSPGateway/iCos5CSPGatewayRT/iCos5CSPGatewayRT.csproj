@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" InitialTargets="CheckPrerequisites">
+  <PropertyGroup>
+    <ProjectGuid>{1C49BE2F-AFF0-4172-B80B-D73D7F51CE4D}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{4422A145-E09F-43FE-9F49-8C43BE48D633};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>iCos5CSPGatewayRT</RootNamespace>
+    <AssemblyName>HDCLabsCSPGatewayRT</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.4.10\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PASoft.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.Common\bin\Release\PASoft.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.DB">
+      <HintPath>..\..\ParanoidFramework\PASoft.DB\bin\Release\PASoft.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.DB.Postgres">
+      <HintPath>..\..\ParanoidFramework\PASoft.DB.Postgres\bin\Release\PASoft.DB.Postgres.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.UI.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.UI.WPF\bin\Release\PASoft.UI.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.Zenon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.Zenon\bin\Release\PASoft.Zenon.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.Zenon.Addins, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.Zenon.Addins\bin\Release\PASoft.Zenon.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Scada.AddIn.Contracts">
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSPManager\ControlEventArgs.cs" />
+    <Compile Include="CSPManager\ControlListItem.cs" />
+    <Compile Include="CSPManager\AlarmServiceUpdatedEventArgs.cs" />
+    <Compile Include="CSPManager\ControlServiceCompletedEventArgs.cs" />
+    <Compile Include="CSPManager\CSPManager_alarm.cs" />
+    <Compile Include="CSPManager\CSPManager_control_bems.cs" />
+    <Compile Include="CSPManager\CSPManager_value_bems.cs" />
+    <Compile Include="CSPManager\CSPManager_value_inbase.cs" />
+    <Compile Include="CSPManager\OnlineControlService_bems.cs" />
+    <Compile Include="CSPManager\OnlineControlService.cs" />
+    <Compile Include="CSPManager\OnlineAlarmService.cs" />
+    <Compile Include="CSPManager\OnlineAlarm.cs" />
+    <Compile Include="CSPManager\ValueMessageInfoStringID.cs" />
+    <Compile Include="CSPManager\ValueMessageInfo.cs" />
+    <Compile Include="CSPManager\AlarmMessageInfo.cs" />
+    <Compile Include="CSPManager\CSPManager_control.cs" />
+    <Compile Include="CSPManager\CSPManager_value.cs" />
+    <Compile Include="CSPManager\CSPManager.cs" />
+    <Compile Include="CSPManager\OnlineValue.cs" />
+    <Compile Include="CSPManager\OnlineVariableService.cs" />
+    <Compile Include="DummyClass.cs" />
+    <Compile Include="ProjectServiceExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AddInInfo.cs" />
+    <Compile Include="RTResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RTResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\WinMainViewModel.cs" />
+    <Compile Include="View\WinMain.xaml.cs">
+      <DependentUpon>WinMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinMain_protected.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Assets\ControlResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WinMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCos5CSPGateway\iCos5CSPGateway.csproj">
+      <Project>{ad715eaf-9195-4849-b79a-dfd3813eaf0e}</Project>
+      <Name>iCos5CSPGateway</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HDCLabs_H_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HDCLabs_H_L.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RTResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RTResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <ScadaBuildTarget>$(registry:HKEY_LOCAL_MACHINE\SOFTWARE\COPA-DATA\DataDir@ProgramDir32_Common)\AddInFramework\AddInFramework.Build.Common.targets</ScadaBuildTarget>
+  </PropertyGroup>
+  <Target Name="CheckPrerequisites">
+    <Error Text="Unable to build the project! Possible reason: no SCADA system installed." Condition="!Exists('$(ScadaBuildTarget)')" />
+  </Target>
+  <Import Project="$(ScadaBuildTarget)" Condition="Exists('$(ScadaBuildTarget)')" />
+  <PropertyGroup>
+    <PostBuildEvent>md "$(ProjectDir)\$(OutDir)scadaAddIn"
+md "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+move "$(ProjectDir)\$(OutDir)$(TargetName).scadaAddIn" "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip"
+
+powershell Expand-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip" -DestinationPath "$(ProjectDir)\$(OutDir)scadaAddIn"
+powershell Expand-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\Binary.zip" -DestinationPath "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+copy "$(ProjectDir)\$(OutDir)Microsoft.Xaml.Behaviors.dll" "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+copy "$(ProjectDir)\$(OutDir)System.Numerics.Vectors.dll" "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+copy "$(ProjectDir)\$(OutDir)System.Runtime.CompilerServices.Unsafe.dll" "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+del "$(ProjectDir)\$(OutDir)scadaAddIn\*.zip"
+
+powershell compress-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\Binary\*.*" -destinationpath "$(ProjectDir)\$(OutDir)scadaAddIn\Binary.zip"
+
+rd /s /q "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+powershell compress-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\*.*" -destinationpath "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip"
+
+copy "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip" "$(ProjectDir)\$(OutDir)$(TargetName).scadaAddIn"
+
+rd /s /q "$(ProjectDir)\$(OutDir)scadaAddIn"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>copy "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\$(TargetFrameworkVersion)\Facades\netstandard.dll" "$(ProjectDir)$(OutDir)netstandard.dll"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,258 @@
+﻿<UserControl x:Class="iCos5CSPGatewayED.View.ViewAlarm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:iCos5CSPGatewayED.View.Converter"
+             mc:Ignorable="d">
+
+  <!-- Resources -->
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Assets/ControlResources.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <!-- Main -->
+  <Border x:Name="MainBorder">
+    <StackPanel>
+
+      <!-- Building ID Item -->
+      <Border Height="70"
+              Margin="5 4 5 2"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_buildingDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="빌딩 ID"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="빌딩 ID는 클라우드 탭에서만 변경 가능합니다."
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1"
+                  Width="400"
+                  Margin="10 0 40 0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+
+              <Grid Grid.Column="0"
+                    Visibility="{Binding ActiveInsite, Converter={converter:BoolToVisibility}}">
+                <TextBlock Width="50" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Text="insite :"/>
+                <TextBlock Width="70" 
+                           Margin="50 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Visibility="{Binding IsSingleBuilding, Converter={converter:NBoolToVisibility}}"
+                           Text="다중빌딩"/>
+                <TextBlock Width="70" 
+                           Margin="50 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Visibility="{Binding IsSingleBuilding, Converter={converter:BoolToVisibility}}"
+                           Text="단일빌딩"/>
+                <TextBlock Margin="120 0 0 0" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           Visibility="{Binding IsSingleBuilding, Converter={converter:BoolToVisibility}}"
+                           Text="{Binding BuildingID}"/>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Alarm Retry Enabled Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_arrow_clockwiseDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="비주기 알람 재전송"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="전송 실패시 파일만 전송할 지 여부를 설정하십시오."
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal" 
+                          HorizontalAlignment="Right" 
+                          Margin="10 0 40 0">
+                <mah:ToggleSwitch IsOn="{Binding IsAlarmRetry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                  OffContent="파일만 전송" 
+                                  OnContent="알람/파일 모두 전송" 
+                                  ContentDirection="LeftToRight"/>
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Alarm Initialization Delay Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_send_slashDrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="전송제외 시간차"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="알람전송 제외되는 시간간격을 설정하십시오.(0 ~ 60분)"
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal"
+                          HorizontalAlignment="Right"
+                          Margin="10 0 40 0">
+                <mah:NumericUpDown x:Name="AlarmIgnoreMinutes" 
+                                   Height="30" Width="90"
+                                   Style="{StaticResource NumericUpDownDefault}"
+                                   Maximum="60"
+                                   Minimum="0"
+                                   Value="{Binding AlarmIgnoreMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider Width="300"
+                        Margin="10 10 0 10"
+                        Orientation="Horizontal"
+                        IsSnapToTickEnabled="True"
+                        TickPlacement="BottomRight"
+                        TickFrequency="5"
+                        Maximum="60"
+                        Minimum="0"
+                        Value="{Binding Value, ElementName=AlarmIgnoreMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+
+      <!-- Alarm RetryInterval Item -->
+      <Border Height="70"
+              Style="{StaticResource BorderConfig}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="18"
+                 Source="{StaticResource Bootstrap_speedometer2DrawingImage}"/>
+          <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" 
+                         Text="재전송 간격"
+                         FontSize="14"
+                         Style="{StaticResource TextBlockTitle}"/>
+              <TextBlock Grid.Row="1"
+                         Text="전송실패 알람 재전송 간격을 설정하십시오.(30 ~ 300초)"
+                         FontSize="12"
+                         Style="{StaticResource TextblockDesc}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+              <StackPanel Orientation="Horizontal"
+                          HorizontalAlignment="Right"
+                          Margin="10 0 40 0">
+                <mah:NumericUpDown x:Name="AlarmRetryInterval" 
+                                   Height="30" Width="90"
+                                   Style="{StaticResource NumericUpDownDefault}"
+                                   Maximum="300"
+                                   Minimum="30"
+                                   Value="{Binding AlarmRetryInterval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider Width="300"
+                        Margin="10 10 0 10"
+                        Orientation="Horizontal"
+                        IsSnapToTickEnabled="True"
+                        TickPlacement="BottomRight"
+                        TickFrequency="30"
+                        Maximum="300"
+                        Minimum="30"
+                        Value="{Binding Value, ElementName=AlarmRetryInterval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Border>
+    </StackPanel>
+  </Border>
+</UserControl>

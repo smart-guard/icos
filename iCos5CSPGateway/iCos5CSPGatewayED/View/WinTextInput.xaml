@@ -1,0 +1,60 @@
+﻿<Window x:Class="iCos5CSPGatewayED.View.WinTextInput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="WinTextInput" 
+        Height="150" Width="300"
+        ResizeMode="NoResize" 
+        WindowStyle="ToolWindow" 
+        WindowStartupLocation="CenterScreen">
+
+  <!-- Resources -->
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Assets/ControlResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
+
+  <!-- Body -->
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0" 
+                Orientation="Horizontal">
+      <Label x:Name="InputName" 
+             Height="32" Width="80"
+             Margin="10 0 0 0"
+             HorizontalContentAlignment="Right"
+             VerticalContentAlignment="Center"
+             Content="ItemName"/>
+      <Label Height="32"
+             VerticalContentAlignment="Center"
+             Content=":"/>
+      <TextBox x:Name="InputText" 
+               Height="32" Width="160"
+               mah:TextBoxHelper.Watermark="내용을 입력하십시오."
+               Style="{StaticResource TextBoxDefault}"/>
+    </StackPanel>
+    <StackPanel Grid.Row="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right">
+      <Button Height="32" Width="48"
+              Margin="0 10 10 10"
+              Content="확인"
+              Style="{StaticResource ButtonDefault}"
+              Click="ButtonOK_Click"/>
+      <Button Height="32" Width="48"
+              Margin="0 10 20 10"
+              Content="취소"
+              Style="{StaticResource ButtonDefault}"
+              Click="ButtonCancel_Click"/>
+    </StackPanel>
+  </Grid>
+</Window>

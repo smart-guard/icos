@@ -1,0 +1,288 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Emerald.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/PASoft.UI.WPF;component/Icon/BootstrapIcons.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+
+  <!-- Color -->
+  <SolidColorBrush x:Key="HDCLabsPrimary1" Color="#9CB6D2"/>
+  <SolidColorBrush x:Key="HDCLabsPrimary2" Color="#D2CFCD"/>
+  <SolidColorBrush x:Key="HDCLabsSecondary1" Color="#FFFFFF"/>
+  <SolidColorBrush x:Key="HDCLabsSecondary2" Color="#4B5055"/>
+  <SolidColorBrush x:Key="HDCLabsThird1" Color="#5D89b3"/>
+  <SolidColorBrush x:Key="HDCLabsThird2" Color="#999899"/>
+  <SolidColorBrush x:Key="HDCLabsThird3" Color="#F03223"/>
+
+  <SolidColorBrush x:Key="ColorBorder" Color="#CED4DA"/>
+  <SolidColorBrush x:Key="ColorBorderHeavy" Color="#AEB4BA"/>
+  <SolidColorBrush x:Key="ColorBorderHover" Color="#7F7F7F"/>
+
+  <SolidColorBrush x:Key="Brush.Background.Default" Color="#FAFCFD"/>
+  <SolidColorBrush x:Key="Brush.BorderBrush.Default" Color="#E1E6EA"/>
+  <SolidColorBrush x:Key="Brush.BorderBrush.Hover.Default" Color="#CACCD1"/>
+
+  <!-- Image -->
+  <DrawingImage x:Key="cloudsW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_clouds_fillGeometry1}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_clouds_fillGeometry2}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="house_gearW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_house_gear_fillGeometry1}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_house_gear_fillGeometry2}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_house_gear_fillGeometry3}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="gear_fillW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_gear_fillGeometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="repeatW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_repeatGeometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="lightningW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_lightning_fillGeometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="building_fill_gearW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_building_fill_gearGeometry1}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_building_fill_gearGeometry2}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="box2W">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_box2Geometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="arrow_clockwiseW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_arrow_clockwiseGeometry1}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_arrow_clockwiseGeometry2}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="saveW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_saveGeometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="info_circleW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_info_circleGeometry1}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_info_circleGeometry2}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="exclamation_triangleR">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="{StaticResource HDCLabsThird3}"
+                         Geometry="{StaticResource Bootstrap_exclamation_triangleGeometry1}"/>
+        <GeometryDrawing Brush="{StaticResource HDCLabsThird3}"
+                         Geometry="{StaticResource Bootstrap_exclamation_triangleGeometry2}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="file_earmark_textW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_file_earmark_textGeometry1}"/>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_file_earmark_textGeometry2}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="lock_fillW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_lock_fillGeometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="unlock_fillW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_unlock_fillGeometry}"/>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+
+  <!-- HamburgerMenu -->
+  <Style x:Key="HamburgerMenuStyle" BasedOn="{StaticResource MahApps.Styles.HamburgerMenu}" TargetType="{x:Type mah:HamburgerMenu}">
+    <Setter Property="PaneBackground" Value="{StaticResource HDCLabsSecondary2}"/>
+    <Setter Property="PaneForeground" Value="{StaticResource HDCLabsSecondary1}"/>
+    <Setter Property="ShowSelectionIndicator" Value="False"/>
+    <Setter Property="HamburgerVisibility" Value="Visible"/>
+    <Setter Property="DisplayMode" Value="CompactInline"/>
+    <Setter Property="IsPaneOpen" Value="True"/>
+    <Setter Property="VerticalScrollBarOnLeftSide" Value="False"/>
+    <Setter Property="HamburgerWidth" Value="48"/>
+    <Setter Property="OpenPaneLength" Value="200"/>
+  </Style>
+
+  <!-- Border -->
+  <Style x:Key="BorderConfig" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource Brush.Background.Default}" />
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.BorderBrush.Default}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="3" />
+    <Setter Property="Margin" Value="5 2 5 2" />
+  </Style>
+  <Style x:Key="BorderExpander" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource Brush.Background.Default}" />
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.BorderBrush.Default}" />
+    <Setter Property="BorderThickness" Value="1 1 1 0" />
+    <Setter Property="CornerRadius" Value="3" />
+    <Setter Property="Margin" Value="5 2 5 2" />
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="#F4F4F4"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="BorderExpanderB" TargetType="{x:Type Border}">
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.BorderBrush.Default}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+    <Setter Property="CornerRadius" Value="3" />
+    <Setter Property="Margin" Value="0" />
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="BorderBrush" Value="#CACCD1"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="BorderSubItem" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource Brush.Background.Default}" />
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.BorderBrush.Default}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Margin" Value="5 0 5 0" />
+  </Style>
+  <Style x:Key="BorderHeader" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="#E9ECEF" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="5 0 0 5" />
+  </Style>
+  <Style x:Key="BorderContents" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="White" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 1 1 1" />
+    <Setter Property="CornerRadius" Value="0 5 5 0" />
+  </Style>
+  
+  <!-- TextBlock -->
+  <Style x:Key="TextBlockTitle" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Bottom" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="Margin" Value="20 0 0 2" />
+  </Style>
+  <Style x:Key="TextblockDesc" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="Foreground" Value="Gray" />
+    <Setter Property="Margin" Value="20 2 0 0" />
+  </Style>
+  <Style x:Key="TextBlockHeader" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="Margin" Value="5" />
+  </Style>
+  <Style x:Key="TextBlockContents" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="Margin" Value="5" />
+  </Style>
+  <Style x:Key="TextBlockGroupHeader" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Bottom" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="Margin" Value="20 5 0 0" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="Bold" />
+  </Style>
+
+  <!-- Button -->
+  <Style x:Key="ButtonDefault" BasedOn="{StaticResource MahApps.Styles.Button}" TargetType="{x:Type Button}">
+    <Setter Property="mah:ControlsHelper.FocusBorderThickness" Value="1" />
+    <Setter Property="mah:ControlsHelper.FocusBorderBrush" Value="{StaticResource MahApps.Brushes.Accent}" />
+    <Setter Property="mah:ControlsHelper.MouseOverBorderBrush" Value="{StaticResource ColorBorderHover}" />
+  </Style>
+
+  <!-- TextBox -->
+  <Style x:Key="TextBoxDefault" BasedOn="{StaticResource MahApps.Styles.TextBox}" TargetType="{x:Type TextBox}">
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+    <Setter Property="mah:ControlsHelper.FocusBorderBrush" Value="{StaticResource MahApps.Brushes.Accent}" />
+  </Style>
+  <Style x:Key="NumericUpDownDefault" TargetType="{x:Type mah:NumericUpDown}">
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+    <Setter Property="mah:ControlsHelper.FocusBorderBrush" Value="{StaticResource MahApps.Brushes.Accent}" />
+    <Setter Property="mah:TextBoxHelper.ClearTextButton" Value="False" />
+  </Style>
+
+  <!-- ComboBox -->
+  <Style x:Key="ComboBoxDefault" BasedOn="{StaticResource MahApps.Styles.ComboBox}" TargetType="{x:Type ComboBox}">
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+    <Setter Property="mah:ControlsHelper.FocusBorderBrush" Value="{StaticResource MahApps.Brushes.Accent}" />
+  </Style>
+
+  <!-- DataGrid -->
+  <Style x:Key="DataGridColumnHeaderDefault" BasedOn="{StaticResource MahApps.Styles.DataGridColumnHeader}" TargetType="{x:Type DataGridColumnHeader}">
+    <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal" />
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,29 @@
+﻿- CSP Gateway ver1.7
+1. BEMS 업로드 기능 추가
+2. 프로그램 Title 수정(CSP Gateway -> Cloud Gateway)
+
+- CSP Gateway ver1.6
+1. Inbase 업로드 기능 추가
+2. Insite, Inbase 서비스 설정 가능
+
+- CSP Gateway ver1.5 Hotfix 수정사항
+1. 제어 비활성화 시 Insite 제어 DB 비우기 시간 설정 추가
+
+- CSP Gateway ver1.4 Hotfix 수정사항
+1. S3 Bucket upload 예외 발생시 교착상태 수정
+2. 정보에 Release Notes 보기 추가
+
+- CSP Gateway ver1.3 Hotfix 수정사항
+1. 하한값 알람 오류 수정(원인 : 하한값만 있는 경우 상한값 기준값이 없어서 예외 발생 -> 기준값이 없는 경우 무시하는 것으로 변경)
+2. Modbus Tag 간헐적 비정상적 값 입력(원인 : 드라이버에서 값 처리 중 로딩하는 경우 등 동기가 일치하지 않아 발생 -> 동기가 맞지 않는 경우 또는 비정상값(-2147483638)인 경우 이전값 전송, 아래와 같은 경우 11:20 주기값 179.7 전송.)
+
+- HDC CSP gateway ver 1.2 수정사항
+1. Modbus Alarm 기본 시간지역 수정(UTC time -> Local time)
+2. Modbus 업데이트 시간 갱신이 되지 않는 문제 수정(원인 : Alarm이 등록된 태그의 경우 Alarm 처리를 위해 값이 변경된 경우에만 시간이 변경됨, 변경사항 : Alarm이 등록된 태그는 드라이버 시간이 아닌 데이터 취득시간으로 변경)
+
+- HDC CSP gateway ver 1.1 수정사항
+1. 관제점 업데이트 시간 옵션 추가(스카다 시간/드라이버시간)
+2. 상세로깅 항목 추가(Value파일 저장마다 파일명/관제점수 로깅)
+3. 업데이트 시간 오류(1900년 이하)인 경우 상세로깅
+4. 정각시간(매시 00분) 스케줄 누락 오류 수정
+5. AWS S3 Clinet Service Timeout(10초) 설정 및 네트워크 재접속 시 서비스 재시작 수정

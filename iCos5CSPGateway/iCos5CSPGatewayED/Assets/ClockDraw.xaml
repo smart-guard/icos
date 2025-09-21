@@ -1,0 +1,851 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry1">F1 M937.5,937.5z M0,0z M-46.875,-46.875L-46.875,-46.875 984.375,-46.875 984.375,-46.875 -46.875,-46.875z</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry2">F1 M937.5,937.5z M0,0z M898.438,468.75L898.438,468.75 897.849,446.262 896.084,423.835 893.147,401.532 889.048,379.413 883.796,357.539 877.407,335.969 869.898,314.764 861.289,293.98 851.604,273.676 840.87,253.906 829.116,234.725 816.374,216.186 802.68,198.339 788.07,181.233 772.585,164.915 756.267,149.43 739.161,134.82 721.314,121.126 702.775,108.384 683.594,96.63 663.824,85.896 643.52,76.211 622.736,67.602 601.531,60.093 579.961,53.704 558.087,48.452 535.968,44.353 513.665,41.416 491.238,39.651 468.75,39.062 446.262,39.651 423.835,41.416 401.532,44.353 379.413,48.452 357.539,53.704 335.969,60.093 314.764,67.602 293.98,76.211 273.676,85.896 253.906,96.63 234.725,108.384 216.186,121.126 198.339,134.82 181.233,149.43 164.915,164.915 149.43,181.233 134.82,198.339 121.126,216.186 108.384,234.725 96.63,253.906 85.896,273.676 76.211,293.98 67.602,314.764 60.093,335.969 53.704,357.539 48.452,379.413 44.353,401.532 41.416,423.835 39.651,446.262 39.062,468.75 39.651,491.238 41.416,513.665 44.353,535.968 48.452,558.087 53.704,579.961 60.093,601.531 67.602,622.736 76.211,643.52 85.896,663.824 96.63,683.594 108.384,702.775 121.126,721.314 134.82,739.161 149.43,756.267 164.915,772.585 181.233,788.07 198.339,802.68 216.186,816.374 234.725,829.116 253.906,840.87 273.676,851.604 293.98,861.289 314.764,869.898 335.969,877.407 357.539,883.796 379.413,889.048 401.532,893.147 423.835,896.084 446.262,897.849 468.75,898.438 491.238,897.849 513.665,896.084 535.968,893.147 558.087,889.048 579.961,883.796 601.531,877.407 622.736,869.898 643.52,861.289 663.824,851.604 683.594,840.87 702.775,829.116 721.314,816.374 739.161,802.68 756.267,788.07 772.585,772.585 788.07,756.267 802.68,739.161 816.374,721.314 829.116,702.775 840.87,683.594 851.604,663.824 861.289,643.52 869.898,622.736 877.407,601.531 883.796,579.961 889.048,558.087 893.147,535.968 896.084,513.665 897.849,491.238 898.437,468.32</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry3">F1 M937.5,937.5z M0,0z M509.173,84.15L509.173,84.15 511.419,62.783</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry4">F1 M937.5,937.5z M0,0z M549.153,90.482L549.153,90.482 553.62,69.467</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry5">F1 M937.5,937.5z M0,0z M588.253,100.959L588.253,100.959 594.892,80.526</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry6">F1 M937.5,937.5z M0,0z M626.043,115.465L626.043,115.465 634.781,95.838</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry7">F1 M937.5,937.5z M0,0z M662.109,133.842L662.109,133.842 672.852,115.236</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry8">F1 M937.5,937.5z M0,0z M696.058,155.888L696.058,155.888 708.686,138.507</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry9">F1 M937.5,937.5z M0,0z M727.515,181.362L727.515,181.362 741.891,165.396</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry10">F1 M937.5,937.5z M0,0z M756.138,209.985L756.138,209.985 772.104,195.609</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry11">F1 M937.5,937.5z M0,0z M781.612,241.442L781.612,241.442 798.993,228.814</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry12">F1 M937.5,937.5z M0,0z M803.658,275.391L803.658,275.391 822.264,264.648</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry13">F1 M937.5,937.5z M0,0z M822.035,311.457L822.035,311.457 841.662,302.719</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry14">F1 M937.5,937.5z M0,0z M836.541,349.247L836.541,349.247 856.974,342.608</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry15">F1 M937.5,937.5z M0,0z M847.018,388.347L847.018,388.347 868.033,383.88</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry16">F1 M937.5,937.5z M0,0z M853.35,428.327L853.35,428.327 874.717,426.081</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry17">F1 M937.5,937.5z M0,0z M855.469,468.75L855.469,468.75 876.953,468.75</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry18">F1 M937.5,937.5z M0,0z M853.35,509.173L853.35,509.173 874.717,511.419</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry19">F1 M937.5,937.5z M0,0z M847.018,549.153L847.018,549.153 868.033,553.62</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry20">F1 M937.5,937.5z M0,0z M836.541,588.253L836.541,588.253 856.974,594.892</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry21">F1 M937.5,937.5z M0,0z M822.035,626.043L822.035,626.043 841.662,634.781</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry22">F1 M937.5,937.5z M0,0z M803.658,662.109L803.658,662.109 822.264,672.852</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry23">F1 M937.5,937.5z M0,0z M781.612,696.058L781.612,696.058 798.993,708.686</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry24">F1 M937.5,937.5z M0,0z M756.138,727.515L756.138,727.515 772.104,741.891</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry25">F1 M937.5,937.5z M0,0z M727.515,756.138L727.515,756.138 741.891,772.104</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry26">F1 M937.5,937.5z M0,0z M696.058,781.612L696.058,781.612 708.686,798.993</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry27">F1 M937.5,937.5z M0,0z M662.109,803.658L662.109,803.658 672.852,822.264</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry28">F1 M937.5,937.5z M0,0z M626.043,822.035L626.043,822.035 634.781,841.662</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry29">F1 M937.5,937.5z M0,0z M588.253,836.541L588.253,836.541 594.892,856.974</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry30">F1 M937.5,937.5z M0,0z M549.153,847.018L549.153,847.018 553.62,868.033</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry31">F1 M937.5,937.5z M0,0z M509.173,853.35L509.173,853.35 511.419,874.717</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry32">F1 M937.5,937.5z M0,0z M468.75,855.469L468.75,855.469 468.75,876.953</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry33">F1 M937.5,937.5z M0,0z M428.327,853.35L428.327,853.35 426.081,874.717</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry34">F1 M937.5,937.5z M0,0z M388.347,847.018L388.347,847.018 383.88,868.033</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry35">F1 M937.5,937.5z M0,0z M349.247,836.541L349.247,836.541 342.608,856.974</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry36">F1 M937.5,937.5z M0,0z M311.457,822.035L311.457,822.035 302.719,841.662</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry37">F1 M937.5,937.5z M0,0z M275.391,803.658L275.391,803.658 264.648,822.264</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry38">F1 M937.5,937.5z M0,0z M241.442,781.612L241.442,781.612 228.814,798.993</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry39">F1 M937.5,937.5z M0,0z M209.985,756.138L209.985,756.138 195.609,772.104</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry40">F1 M937.5,937.5z M0,0z M181.362,727.515L181.362,727.515 165.396,741.891</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry41">F1 M937.5,937.5z M0,0z M155.888,696.058L155.888,696.058 138.507,708.686</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry42">F1 M937.5,937.5z M0,0z M133.842,662.109L133.842,662.109 115.236,672.852</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry43">F1 M937.5,937.5z M0,0z M115.465,626.043L115.465,626.043 95.838,634.781</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry44">F1 M937.5,937.5z M0,0z M100.959,588.253L100.959,588.253 80.526,594.892</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry45">F1 M937.5,937.5z M0,0z M90.482,549.153L90.482,549.153 69.467,553.62</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry46">F1 M937.5,937.5z M0,0z M84.15,509.173L84.15,509.173 62.783,511.419</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry47">F1 M937.5,937.5z M0,0z M82.031,468.75L82.031,468.75 60.547,468.75</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry48">F1 M937.5,937.5z M0,0z M84.15,428.327L84.15,428.327 62.783,426.081</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry49">F1 M937.5,937.5z M0,0z M90.482,388.347L90.482,388.347 69.467,383.88</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry50">F1 M937.5,937.5z M0,0z M100.959,349.247L100.959,349.247 80.526,342.608</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry51">F1 M937.5,937.5z M0,0z M115.465,311.457L115.465,311.457 95.838,302.719</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry52">F1 M937.5,937.5z M0,0z M133.842,275.391L133.842,275.391 115.236,264.648</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry53">F1 M937.5,937.5z M0,0z M155.888,241.442L155.888,241.442 138.507,228.814</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry54">F1 M937.5,937.5z M0,0z M181.362,209.985L181.362,209.985 165.396,195.609</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry55">F1 M937.5,937.5z M0,0z M209.985,181.362L209.985,181.362 195.609,165.396</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry56">F1 M937.5,937.5z M0,0z M241.442,155.888L241.442,155.888 228.814,138.507</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry57">F1 M937.5,937.5z M0,0z M275.391,133.842L275.391,133.842 264.648,115.236</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry58">F1 M937.5,937.5z M0,0z M311.457,115.465L311.457,115.465 302.719,95.838</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry59">F1 M937.5,937.5z M0,0z M349.247,100.959L349.247,100.959 342.608,80.526</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry60">F1 M937.5,937.5z M0,0z M388.347,90.482L388.347,90.482 383.88,69.467</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry61">F1 M937.5,937.5z M0,0z M428.327,84.15L428.327,84.15 426.081,62.783</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry62">F1 M937.5,937.5z M0,0z M468.75,82.031L468.75,82.031 468.75,60.547</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry63">F1 M937.5,937.5z M0,0z M629.883,189.66L629.883,189.66 672.852,115.236</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry64">F1 M937.5,937.5z M0,0z M747.84,307.617L747.84,307.617 822.264,264.648</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry65">F1 M937.5,937.5z M0,0z M791.016,468.75L791.016,468.75 876.953,468.75</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry66">F1 M937.5,937.5z M0,0z M747.84,629.883L747.84,629.883 822.264,672.852</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry67">F1 M937.5,937.5z M0,0z M629.883,747.84L629.883,747.84 672.852,822.264</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry68">F1 M937.5,937.5z M0,0z M468.75,791.016L468.75,791.016 468.75,876.953</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry69">F1 M937.5,937.5z M0,0z M307.617,747.84L307.617,747.84 264.648,822.264</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry70">F1 M937.5,937.5z M0,0z M189.66,629.883L189.66,629.883 115.236,672.852</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry71">F1 M937.5,937.5z M0,0z M146.484,468.75L146.484,468.75 60.547,468.75</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry72">F1 M937.5,937.5z M0,0z M189.66,307.617L189.66,307.617 115.236,264.648</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry73">F1 M937.5,937.5z M0,0z M307.617,189.66L307.617,189.66 264.648,115.236</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry74">F1 M937.5,937.5z M0,0z M468.75,146.484L468.75,146.484 468.75,60.547</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry75">F1 M937.5,937.5z M0,0z M458.646,510.514L458.646,510.514 529.373,218.166</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry76">F1 M937.5,937.5z M0,0z M442.194,387.019L442.194,387.019 593.564,852.888</Geometry>
+  <Geometry x:Key="AnalogClockAnimation2_still_frameGeometry77">F1 M937.5,937.5z M0,0z M387.019,495.306L387.019,495.306 852.888,343.936</Geometry>
+  <DrawingGroup x:Key="AnalogClockAnimation2_still_frameDrawingGroup" ClipGeometry="M0,0 V937.5 H937.5 V0 H0 Z">
+    <DrawingGroup.Transform>
+      <TranslateTransform X="46.875" Y="46.875" />
+    </DrawingGroup.Transform>
+    <GeometryDrawing Brush="#FFFFFFFF">
+      <GeometryDrawing.Geometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,937.5,937.5" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+    <GeometryDrawing Brush="#FFFFFFFF" Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry1}" />
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry2}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="12.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry3}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry4}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry5}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry6}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry7}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry8}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry9}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry10}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry11}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry12}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry13}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry14}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry15}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry16}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry17}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry18}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry19}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry20}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry21}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry22}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry23}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry24}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry25}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry26}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry27}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry28}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry29}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry30}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry31}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry32}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry33}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry34}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry35}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry36}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry37}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry38}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry39}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry40}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry41}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry42}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry43}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry44}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry45}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry46}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry47}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry48}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry49}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry50}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry51}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry52}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry53}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry54}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry55}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry56}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry57}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry58}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry59}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry60}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry61}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry62}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry63}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry64}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry65}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry66}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry67}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry68}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry69}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry70}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry71}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry72}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry73}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry74}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry75}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="25" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry76}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry77}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+  </DrawingGroup>
+  <DrawingImage x:Key="AnalogClockAnimation2_still_frameDrawingImage" Drawing="{StaticResource AnalogClockAnimation2_still_frameDrawingGroup}" />
+  <DrawingGroup x:Key="AnalogClockAnimation2_void_frameDrawingGroup" ClipGeometry="M0,0 V937.5 H937.5 V0 H0 Z">
+    <DrawingGroup.Transform>
+      <TranslateTransform X="46.875" Y="46.875" />
+    </DrawingGroup.Transform>
+    <GeometryDrawing Brush="#FFFFFFFF">
+      <GeometryDrawing.Geometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,937.5,937.5" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+    <GeometryDrawing Brush="#FFFFFFFF" Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry1}" />
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry2}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="12.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+<!-- Short bar -->
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry3}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry4}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry5}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry6}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry7}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry8}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry9}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry10}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry11}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry12}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry13}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry14}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry15}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry16}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry17}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry18}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry19}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry20}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry21}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry22}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry23}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry24}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry25}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry26}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry27}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry28}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry29}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry30}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry31}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry32}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry33}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry34}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry35}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry36}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry37}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry38}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry39}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry40}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry41}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry42}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry43}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry44}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry45}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry46}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry47}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry48}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry49}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry50}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry51}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry52}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry53}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry54}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry55}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry56}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry57}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry58}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry59}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry60}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry61}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry62}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="10" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+<!-- Long bar -->
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry63}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry64}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry65}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry66}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry67}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry68}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry69}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry70}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry71}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry72}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry73}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="{StaticResource AnalogClockAnimation2_still_frameGeometry74}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="#FF000000" Thickness="15" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+  </DrawingGroup>
+  <DrawingImage x:Key="AnalogClockAnimation2_void_frameDrawingImage" Drawing="{StaticResource AnalogClockAnimation2_void_frameDrawingGroup}" />
+</ResourceDictionary>

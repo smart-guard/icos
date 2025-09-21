@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{E3F45758-A00B-455E-9B5E-9A539016779D}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{4422A145-E09F-43FE-9F49-8C43BE48D633};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>iCos5CSPGatewayED</RootNamespace>
+    <AssemblyName>HDCLabsCSPGatewayED</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.4.10\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PASoft.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.Common\bin\Release\PASoft.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.DB">
+      <HintPath>..\..\ParanoidFramework\PASoft.DB\bin\Release\PASoft.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.DB.Postgres">
+      <HintPath>..\..\ParanoidFramework\PASoft.DB.Postgres\bin\Release\PASoft.DB.Postgres.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.UI.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.UI.WPF\bin\Release\PASoft.UI.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.Zenon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.Zenon\bin\Release\PASoft.Zenon.dll</HintPath>
+    </Reference>
+    <Reference Include="PASoft.Zenon.Addins, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ParanoidFramework\PASoft.Zenon.Addins\bin\Release\PASoft.Zenon.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Scada.AddIn.Contracts">
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DummyClass.cs" />
+    <Compile Include="EngineeringStudioWizardExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AddInInfo.cs" />
+    <Compile Include="EDResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\WinMainViewModel.cs" />
+    <Compile Include="View\Converter\ViewConverter.cs" />
+    <Compile Include="View\ViewAlarm.xaml.cs">
+      <DependentUpon>ViewAlarm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCloud.xaml.cs">
+      <DependentUpon>ViewCloud.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCommon.xaml.cs">
+      <DependentUpon>ViewCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewControl.xaml.cs">
+      <DependentUpon>ViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewValue.xaml.cs">
+      <DependentUpon>ViewValue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinMain.xaml.cs">
+      <DependentUpon>WinMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinMain_progress.cs" />
+    <Compile Include="View\WinSplash.xaml.cs">
+      <DependentUpon>WinSplash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinReleaseNotes.xaml.cs">
+      <DependentUpon>WinReleaseNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinTextInput.xaml.cs">
+      <DependentUpon>WinTextInput.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Assets\EnergyManagmentDraw.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ClockDraw.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ControlResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewAlarm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewCloud.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewValue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WinMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WinSplash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinReleaseNotes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WinTextInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EDResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EDResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\HDCLabsCSPGatewayRT.scadaAddIn" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCos5CSPGateway\iCos5CSPGateway.csproj">
+      <Project>{ad715eaf-9195-4849-b79a-dfd3813eaf0e}</Project>
+      <Name>iCos5CSPGateway</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Company_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Company_Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HDCLabs_H_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ReleaseNotes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <ScadaBuildTarget>$(registry:HKEY_LOCAL_MACHINE\SOFTWARE\COPA-DATA\DataDir@ProgramDir32_Common)\AddInFramework\AddInFramework.Build.Common.targets</ScadaBuildTarget>
+  </PropertyGroup>
+  <Target Name="CheckPrequesits">
+    <Error Text="Unable to build the project! Possible reason: no SCADA system installed." Condition="!Exists('$(ScadaBuildTarget)')" />
+  </Target>
+  <Import Project="$(ScadaBuildTarget)" Condition="Exists('$(ScadaBuildTarget)')" />
+  <PropertyGroup>
+    <PostBuildEvent>md "$(ProjectDir)\$(OutDir)scadaAddIn"
+md "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+move "$(ProjectDir)\$(OutDir)$(TargetName).scadaAddIn" "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip"
+
+powershell Expand-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip" -DestinationPath "$(ProjectDir)\$(OutDir)scadaAddIn"
+powershell Expand-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\Binary.zip" -DestinationPath "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+copy "$(ProjectDir)\$(OutDir)Microsoft.Xaml.Behaviors.dll" "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+copy "$(ProjectDir)\$(OutDir)System.Numerics.Vectors.dll" "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+copy "$(ProjectDir)\$(OutDir)System.Runtime.CompilerServices.Unsafe.dll" "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+del "$(ProjectDir)\$(OutDir)scadaAddIn\*.zip"
+
+powershell compress-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\Binary\*.*" -destinationpath "$(ProjectDir)\$(OutDir)scadaAddIn\Binary.zip"
+
+rd /s /q "$(ProjectDir)\$(OutDir)scadaAddIn\Binary"
+
+powershell compress-archive -path "$(ProjectDir)\$(OutDir)scadaAddIn\*.*" -destinationpath "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip"
+
+copy "$(ProjectDir)\$(OutDir)scadaAddIn\$(TargetName).zip" "$(ProjectDir)\$(OutDir)$(TargetName).scadaAddIn"
+
+rd /s /q "$(ProjectDir)\$(OutDir)scadaAddIn"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>copy "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\$(TargetFrameworkVersion)\Facades\netstandard.dll" "$(ProjectDir)$(OutDir)netstandard.dll"
+
+copy "$(ProjectDir)..\iCos5CSPGatewayRT\$(OutDir)HDCLabsCSPGatewayRT.scadaAddIn" "$(ProjectDir)Resources\HDCLabsCSPGatewayRT.scadaAddIn"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

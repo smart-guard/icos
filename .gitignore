@@ -1,0 +1,110 @@
+# Build directories
+build/
+dist/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+out/
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+
+# IDE files
+.vscode/
+.vs/
+.idea/
+*.vcxproj.user
+*.sln.docstates
+*.suo
+*.user
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# Environment files
+.env
+.env.local
+*.config
+app.config
+web.config
+
+# Logs
+logs/
+*.log
+*.txt
+
+# Node.js (CSP Gateway용)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+
+# BACnet specific
+*.bac
+*.bacnet
+
+# C++ specific
+*.gch
+*.pch
+*.tlog
+*.lastbuildstate
+*.idb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp_proj
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Archive files
+*.zip
+*.rar
+*.7z
+*.tar.gz

@@ -1,0 +1,168 @@
+﻿<mah:MetroWindow x:Class="iCos5BACnetScheduleRT.View.WinMain"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 mc:Ignorable="d"
+                 x:Name="thisWindows"
+                 Height="900" Width="1220"
+                 MinHeight="900" MinWidth="1220"
+                 Icon="../Resources/HDCLabs_H_L.png"
+                 ResizeMode="CanResizeWithGrip"
+                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 TitleCharacterCasing="Normal"
+                 WindowStartupLocation="CenterScreen"
+                 Loaded="MetroWindow_Loaded">
+
+  <!-- Resources -->
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Assets/ControlResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- Hamburger -->
+      <DataTemplate x:Key="HamburgerMenuDataTemplate" 
+                    DataType="{x:Type mah:HamburgerMenuImageItem}">
+        <DockPanel Height="48" 
+                   LastChildFill="True">
+          <Grid x:Name="IconPart"
+                Width="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}}"
+                DockPanel.Dock="Left">
+            <Image Margin="12"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Source="{Binding Thumbnail}"/>
+          </Grid>
+          <TextBlock x:Name="TextPart"
+                     VerticalAlignment="Center"
+                     FontSize="16"
+                     Text="{Binding Label}"/>
+        </DockPanel>
+        <DataTemplate.Triggers>
+          <DataTrigger Binding="{Binding PanePlacement, RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}}" 
+                       Value="Right">
+            <Setter TargetName="IconPart" Property="DockPanel.Dock" Value="Right"/>
+            <Setter TargetName="TextPart" Property="Margin" Value="8 0 0 0"/>
+          </DataTrigger>
+        </DataTemplate.Triggers>
+      </DataTemplate>
+      <DataTemplate x:Key="HamburgerOptionsDataTemplate" 
+                    DataType="{x:Type mah:HamburgerMenuImageItem}">
+        <DockPanel Height="48" 
+                   LastChildFill="True">
+          <Grid x:Name="IconPart"
+                Width="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}}"
+                DockPanel.Dock="Left"
+                Focusable="False">
+            <Image Margin="12"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Source="{Binding Thumbnail}"/>
+          </Grid>
+          <TextBlock x:Name="TextPart"
+                     VerticalAlignment="Center"
+                     FontSize="16"
+                     Text="{Binding Label}"/>
+        </DockPanel>
+        <DataTemplate.Triggers>
+          <DataTrigger Binding="{Binding PanePlacement, RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}}" 
+                       Value="Right">
+            <Setter TargetName="IconPart" Property="DockPanel.Dock" Value="Right"/>
+            <Setter TargetName="TextPart" Property="Margin" Value="8 0 0 0"/>
+          </DataTrigger>
+        </DataTemplate.Triggers>
+      </DataTemplate>
+    </ResourceDictionary>
+  </Window.Resources>
+
+  <!-- Main -->
+  <Border x:Name="MainBorder">
+    <mah:HamburgerMenu x:Name="HamburgerMenuControl" 
+                       ItemTemplate="{StaticResource HamburgerMenuDataTemplate}"
+                       OptionsItemTemplate="{StaticResource HamburgerOptionsDataTemplate}"
+                       Style="{StaticResource HamburgerMenuStyle}"
+                       ItemInvoked="HamburgerMenuControl_ItemInvoked">
+      <!-- Hamburger Header -->
+      <mah:HamburgerMenu.HamburgerMenuHeaderTemplate>
+        <DataTemplate>
+          <TextBlock HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     FontSize="18"
+                     FontWeight="Bold"
+                     Foreground="White"
+                     Text="BACnet 스케줄"/>
+        </DataTemplate>
+      </mah:HamburgerMenu.HamburgerMenuHeaderTemplate>
+
+      <!-- Hamburger Items -->
+      <mah:HamburgerMenu.ItemsSource>
+        <mah:HamburgerMenuItemCollection>
+          <mah:HamburgerMenuImageItem Thumbnail="{StaticResource calendar_weekW}" 
+                                      Label="주간 일정"
+                                      Tag="{Binding WeeklyScheduleView}"/>
+          <mah:HamburgerMenuImageItem Thumbnail="{StaticResource calendar_eventW}" 
+                                      Label="예외 일정"
+                                      Tag="{Binding ExceptionScheduleView}"
+                                      IsVisible="{Binding DataContext.Config.IsActiveExceptionTab, ElementName=thisWindows}"/>
+        </mah:HamburgerMenuItemCollection>
+      </mah:HamburgerMenu.ItemsSource>
+
+      <!-- Hamburger Options -->
+      <mah:HamburgerMenu.OptionsItemsSource>
+        <mah:HamburgerMenuItemCollection>
+          <mah:HamburgerMenuImageItem Thumbnail="{StaticResource info_circleW}" 
+                                      Label="정보"
+                                      ToolTip="About"/>
+        </mah:HamburgerMenuItemCollection>
+      </mah:HamburgerMenu.OptionsItemsSource>
+
+      <!-- Hamburger Content -->
+      <mah:HamburgerMenu.ContentTemplate>
+        <DataTemplate DataType="{x:Type mah:HamburgerMenuItem}">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="48"/>
+              <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Background="{StaticResource HDCLabsPrimary2}">
+              <Grid>
+                <TextBlock HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Margin="10 0 0 0"
+                           Text="{Binding Label}"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                  <TextBlock Text="{Binding DataContext.ScheduleDescription, ElementName=thisWindows}"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             FontWeight="Bold"/>
+                  <Image Height="28" 
+                         VerticalAlignment="Center"
+                         Margin="20 0 10 0"
+                         Source="../Resources/Company_Logo.png"/>
+                </StackPanel>
+              </Grid>
+            </Border>
+            <mah:TransitioningContentControl Grid.Row="1"
+                                             Content="{Binding}"
+                                             RestartTransitionOnContentChange="True"
+                                             Transition="Right">
+              <mah:TransitioningContentControl.Resources>
+                <DataTemplate DataType="{x:Type mah:HamburgerMenuItem}">
+                  <ContentControl Content="{Binding Tag, Mode=OneWay}"
+                                  Focusable="True"
+                                  IsTabStop="False"/>
+                </DataTemplate>
+              </mah:TransitioningContentControl.Resources>
+            </mah:TransitioningContentControl>
+          </Grid>
+        </DataTemplate>
+      </mah:HamburgerMenu.ContentTemplate>
+    </mah:HamburgerMenu>
+  </Border>
+</mah:MetroWindow>

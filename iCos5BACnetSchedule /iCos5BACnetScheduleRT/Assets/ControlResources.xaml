@@ -1,0 +1,726 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:iCos5BACnetScheduleRT.View.Converter">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/PASoft.UI.WPF;component/Icon/BootstrapIcons.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+
+  <!-- Color -->
+  <SolidColorBrush x:Key="HDCLabsPrimary1" Color="#9CB6D2"/>
+  <SolidColorBrush x:Key="HDCLabsPrimary2" Color="#D2CFCD"/>
+  <SolidColorBrush x:Key="HDCLabsSecondary1" Color="#FFFFFF"/>
+  <SolidColorBrush x:Key="HDCLabsSecondary2" Color="#4B5055"/>
+  <SolidColorBrush x:Key="HDCLabsThird1" Color="#5D89b3"/>
+  <SolidColorBrush x:Key="HDCLabsThird2" Color="#999899"/>
+  <SolidColorBrush x:Key="HDCLabsThird3" Color="#F03223"/>
+
+  <SolidColorBrush x:Key="ColorBorder" Color="#CED4DA"/>
+  <SolidColorBrush x:Key="ColorBorderLight" Color="#E4ECEF"/>
+  <SolidColorBrush x:Key="ColorBorderHover" Color="#7F7F7F"/>
+  <SolidColorBrush x:Key="ColorBorderHeavy" Color="#AEB4BA"/>
+  
+  <SolidColorBrush x:Key="ColorGridAM" Color="#80ECECEC"/>
+  <SolidColorBrush x:Key="ColorGridAMAlt" Color="#80E1E1E1"/>
+  <SolidColorBrush x:Key="ColorGridPM" Color="#80DDEDDD"/>
+  <SolidColorBrush x:Key="ColorGridPMAlt" Color="#80D2E2D2"/>
+
+  <SolidColorBrush x:Key="ColorGridAMS" Color="#80ECECFF"/>
+  <SolidColorBrush x:Key="ColorGridAMSAlt" Color="#80E1E1FF"/>
+  <SolidColorBrush x:Key="ColorGridPMS" Color="#80DDEDFF"/>
+  <SolidColorBrush x:Key="ColorGridPMSAlt" Color="#80D2E2FF"/>
+
+  <SolidColorBrush x:Key="ColorGridAMH" Color="#80FFECEC"/>
+  <SolidColorBrush x:Key="ColorGridAMHAlt" Color="#80FFE1E1"/>
+  <SolidColorBrush x:Key="ColorGridPMH" Color="#80FFEDDD"/>
+  <SolidColorBrush x:Key="ColorGridPMHAlt" Color="#80FFE2D2"/>
+
+  <!-- Image -->
+  <DrawingImage x:Key="calendar_weekW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_calendar_week_fillGeometry}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="calendar_eventW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_calendar_event_fillGeometry}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="calendar_dateW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_calendar_date_fillGeometry1}" />
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_calendar_date_fillGeometry2}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="gearW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_gear_fillGeometry}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="info_circleW">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_info_circleGeometry1}" />
+        <GeometryDrawing Brush="White"
+                         Geometry="{StaticResource Bootstrap_info_circleGeometry2}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="exclamation_triangleR">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="Red"
+                         Geometry="{StaticResource Bootstrap_exclamation_triangleGeometry1}" />
+        <GeometryDrawing Brush="Red"
+                         Geometry="{StaticResource Bootstrap_exclamation_triangleGeometry2}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="forward_fillR">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="Red"
+                         Geometry="{StaticResource Bootstrap_forward_fillGeometry}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="forwardR">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="Red"
+                         Geometry="{StaticResource Bootstrap_forwardGeometry}" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  
+  <!-- Datagrid -->
+  <DataTemplate x:Key="ScheduleItemsDataGridRowHeaderTemplate">
+    <Grid Height="{Binding RowHeight, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Grid.Row="0"
+                 Text="0시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="1"
+                 Text="1시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="2"
+                 Text="2시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="3"
+                 Text="3시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="4"
+                 Text="4시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="5"
+                 Text="5시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="6"
+                 Text="6시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="7"
+                 Text="7시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="8"
+                 Text="8시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="9"
+                 Text="9시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="10"
+                 Text="10시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="11"
+                 Text="11시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="12"
+                 Text="12시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="13"
+                 Text="13시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="14"
+                 Text="14시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="15"
+                 Text="15시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="16"
+                 Text="16시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="17"
+                 Text="17시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="18"
+                 Text="18시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="19"
+                 Text="19시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="20"
+                 Text="20시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="21"
+                 Text="21시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="22"
+                 Text="22시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+      <TextBlock Grid.Row="23"
+                 Text="23시"
+                 Style="{DynamicResource TextBlockGridRowHeader}"/>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="ScheduleItemsDataGridCellTemplateNormal">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+      </Grid.RowDefinitions>
+      <Border Grid.Row="0"
+              Style="{DynamicResource BorderGridHeaderAM}">
+      </Border>
+      <Border Grid.Row="1"
+              Style="{DynamicResource BorderGridHeaderAMAlt}">
+      </Border>
+      <Border Grid.Row="2"
+              Style="{DynamicResource BorderGridHeaderAM}">
+      </Border>
+      <Border Grid.Row="3"
+              Style="{DynamicResource BorderGridHeaderAMAlt}">
+      </Border>
+      <Border Grid.Row="4"
+              Style="{DynamicResource BorderGridHeaderAM}">
+      </Border>
+      <Border Grid.Row="5"
+              Style="{DynamicResource BorderGridHeaderAMAlt}">
+      </Border>
+      <Border Grid.Row="6"
+              Style="{DynamicResource BorderGridHeaderAM}">
+      </Border>
+      <Border Grid.Row="7"
+              Style="{DynamicResource BorderGridHeaderAMAlt}">
+      </Border>
+      <Border Grid.Row="8"
+              Style="{DynamicResource BorderGridHeaderAM}">
+      </Border>
+      <Border Grid.Row="9"
+              Style="{DynamicResource BorderGridHeaderAMAlt}">
+      </Border>
+      <Border Grid.Row="10"
+              Style="{DynamicResource BorderGridHeaderAM}">
+      </Border>
+      <Border Grid.Row="11"
+              BorderThickness="0 0 0 3"
+              BorderBrush="{DynamicResource ColorBorderHeavy}"
+              Style="{DynamicResource BorderGridHeaderAMAlt}">
+      </Border>
+      <Border Grid.Row="12"
+              Style="{DynamicResource BorderGridHeaderPM}">
+      </Border>
+      <Border Grid.Row="13"
+              Style="{DynamicResource BorderGridHeaderPMAlt}">
+      </Border>
+      <Border Grid.Row="14"
+              Style="{DynamicResource BorderGridHeaderPM}">
+      </Border>
+      <Border Grid.Row="15"
+              Style="{DynamicResource BorderGridHeaderPMAlt}">
+      </Border>
+      <Border Grid.Row="16"
+              Style="{DynamicResource BorderGridHeaderPM}">
+      </Border>
+      <Border Grid.Row="17"
+              Style="{DynamicResource BorderGridHeaderPMAlt}">
+      </Border>
+      <Border Grid.Row="18"
+              Style="{DynamicResource BorderGridHeaderPM}">
+      </Border>
+      <Border Grid.Row="19"
+              Style="{DynamicResource BorderGridHeaderPMAlt}">
+      </Border>
+      <Border Grid.Row="20"
+              Style="{DynamicResource BorderGridHeaderPM}">
+      </Border>
+      <Border Grid.Row="21"
+              Style="{DynamicResource BorderGridHeaderPMAlt}">
+      </Border>
+      <Border Grid.Row="22"
+              Style="{DynamicResource BorderGridHeaderPM}">
+      </Border>
+      <Border Grid.Row="23"
+              Style="{DynamicResource BorderGridHeaderPMAlt}">
+      </Border>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="ScheduleItemsDataGridCellTemplateSaturday">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+      </Grid.RowDefinitions>
+      <Border Grid.Row="0"
+              Style="{DynamicResource BorderGridHeaderAMS}">
+      </Border>
+      <Border Grid.Row="1"
+              Style="{DynamicResource BorderGridHeaderAMSAlt}">
+      </Border>
+      <Border Grid.Row="2"
+              Style="{DynamicResource BorderGridHeaderAMS}">
+      </Border>
+      <Border Grid.Row="3"
+              Style="{DynamicResource BorderGridHeaderAMSAlt}">
+      </Border>
+      <Border Grid.Row="4"
+              Style="{DynamicResource BorderGridHeaderAMS}">
+      </Border>
+      <Border Grid.Row="5"
+              Style="{DynamicResource BorderGridHeaderAMSAlt}">
+      </Border>
+      <Border Grid.Row="6"
+              Style="{DynamicResource BorderGridHeaderAMS}">
+      </Border>
+      <Border Grid.Row="7"
+              Style="{DynamicResource BorderGridHeaderAMSAlt}">
+      </Border>
+      <Border Grid.Row="8"
+              Style="{DynamicResource BorderGridHeaderAMS}">
+      </Border>
+      <Border Grid.Row="9"
+              Style="{DynamicResource BorderGridHeaderAMSAlt}">
+      </Border>
+      <Border Grid.Row="10"
+              Style="{DynamicResource BorderGridHeaderAMS}">
+      </Border>
+      <Border Grid.Row="11"
+              BorderThickness="0 0 0 3"
+              BorderBrush="{DynamicResource ColorBorderHeavy}"
+              Style="{DynamicResource BorderGridHeaderAMSAlt}">
+      </Border>
+      <Border Grid.Row="12"
+              Style="{DynamicResource BorderGridHeaderPMS}">
+      </Border>
+      <Border Grid.Row="13"
+              Style="{DynamicResource BorderGridHeaderPMSAlt}">
+      </Border>
+      <Border Grid.Row="14"
+              Style="{DynamicResource BorderGridHeaderPMS}">
+      </Border>
+      <Border Grid.Row="15"
+              Style="{DynamicResource BorderGridHeaderPMSAlt}">
+      </Border>
+      <Border Grid.Row="16"
+              Style="{DynamicResource BorderGridHeaderPMS}">
+      </Border>
+      <Border Grid.Row="17"
+              Style="{DynamicResource BorderGridHeaderPMSAlt}">
+      </Border>
+      <Border Grid.Row="18"
+              Style="{DynamicResource BorderGridHeaderPMS}">
+      </Border>
+      <Border Grid.Row="19"
+              Style="{DynamicResource BorderGridHeaderPMSAlt}">
+      </Border>
+      <Border Grid.Row="20"
+              Style="{DynamicResource BorderGridHeaderPMS}">
+      </Border>
+      <Border Grid.Row="21"
+              Style="{DynamicResource BorderGridHeaderPMSAlt}">
+      </Border>
+      <Border Grid.Row="22"
+              Style="{DynamicResource BorderGridHeaderPMS}">
+      </Border>
+      <Border Grid.Row="23"
+              Style="{DynamicResource BorderGridHeaderPMSAlt}">
+      </Border>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="ScheduleItemsDataGridCellTemplateHoliday">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+      </Grid.RowDefinitions>
+      <Border Grid.Row="0"
+              Style="{DynamicResource BorderGridHeaderAMH}">
+      </Border>
+      <Border Grid.Row="1"
+              Style="{DynamicResource BorderGridHeaderAMHAlt}">
+      </Border>
+      <Border Grid.Row="2"
+              Style="{DynamicResource BorderGridHeaderAMH}">
+      </Border>
+      <Border Grid.Row="3"
+              Style="{DynamicResource BorderGridHeaderAMHAlt}">
+      </Border>
+      <Border Grid.Row="4"
+              Style="{DynamicResource BorderGridHeaderAMH}">
+      </Border>
+      <Border Grid.Row="5"
+              Style="{DynamicResource BorderGridHeaderAMHAlt}">
+      </Border>
+      <Border Grid.Row="6"
+              Style="{DynamicResource BorderGridHeaderAMH}">
+      </Border>
+      <Border Grid.Row="7"
+              Style="{DynamicResource BorderGridHeaderAMHAlt}">
+      </Border>
+      <Border Grid.Row="8"
+              Style="{DynamicResource BorderGridHeaderAMH}">
+      </Border>
+      <Border Grid.Row="9"
+              Style="{DynamicResource BorderGridHeaderAMHAlt}">
+      </Border>
+      <Border Grid.Row="10"
+              Style="{DynamicResource BorderGridHeaderAMH}">
+      </Border>
+      <Border Grid.Row="11"
+              BorderThickness="0 0 0 3"
+              BorderBrush="{DynamicResource ColorBorderHeavy}"
+              Style="{DynamicResource BorderGridHeaderAMHAlt}">
+      </Border>
+      <Border Grid.Row="12"
+              Style="{DynamicResource BorderGridHeaderPMH}">
+      </Border>
+      <Border Grid.Row="13"
+              Style="{DynamicResource BorderGridHeaderPMHAlt}">
+      </Border>
+      <Border Grid.Row="14"
+              Style="{DynamicResource BorderGridHeaderPMH}">
+      </Border>
+      <Border Grid.Row="15"
+              Style="{DynamicResource BorderGridHeaderPMHAlt}">
+      </Border>
+      <Border Grid.Row="16"
+              Style="{DynamicResource BorderGridHeaderPMH}">
+      </Border>
+      <Border Grid.Row="17"
+              Style="{DynamicResource BorderGridHeaderPMHAlt}">
+      </Border>
+      <Border Grid.Row="18"
+              Style="{DynamicResource BorderGridHeaderPMH}">
+      </Border>
+      <Border Grid.Row="19"
+              Style="{DynamicResource BorderGridHeaderPMHAlt}">
+      </Border>
+      <Border Grid.Row="20"
+              Style="{DynamicResource BorderGridHeaderPMH}">
+      </Border>
+      <Border Grid.Row="21"
+              Style="{DynamicResource BorderGridHeaderPMHAlt}">
+      </Border>
+      <Border Grid.Row="22"
+              Style="{DynamicResource BorderGridHeaderPMH}">
+      </Border>
+      <Border Grid.Row="23"
+              Style="{DynamicResource BorderGridHeaderPMHAlt}">
+      </Border>
+    </Grid>
+  </DataTemplate>
+
+  <Style x:Key="ScheduleItemsDataGridColumnHeaderNormal" TargetType="{x:Type DataGridColumnHeader}">
+    <Setter Property="Height" Value="50"/>
+    <Setter Property="Background" Value="#E9ECEF"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="BorderThickness" Value="0 1 0 2"/>
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="#89C0ED" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="ScheduleItemsDataGridColumnHeaderSaturday" TargetType="{x:Type DataGridColumnHeader}">
+    <Setter Property="Height" Value="50"/>
+    <Setter Property="Foreground" Value="#000066"/>
+    <Setter Property="Background" Value="#C9CCEF"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="BorderThickness" Value="0 1 0 2"/>
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="#69A0ED" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="ScheduleItemsDataGridColumnHeaderHoliday" TargetType="{x:Type DataGridColumnHeader}">
+    <Setter Property="Height" Value="50"/>
+    <Setter Property="Foreground" Value="#660000"/>
+    <Setter Property="Background" Value="#E9CCCF"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="BorderThickness" Value="0 1 0 2"/>
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="#89A0CD" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="ScheduleItemsDataGridCell" TargetType="{x:Type DataGridCell}">
+    <Style.Triggers>
+      <Trigger Property="IsSelected" Value="True">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#3F99E1"/>
+        <Setter Property="Background" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="IsFocused" Value="True">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#3F99E1"/>
+        <Setter Property="Background" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="#302098F7"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <DataTemplate x:Key="ScheduleListDataGridRowHeaderTemplate">
+    <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Converter={converter:DataGridRowIndex}}"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               Margin="0 0 2 0"/>
+  </DataTemplate>
+
+  <Style x:Key="ScheduleListDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
+    <Setter Property="Height" Value="25"/>
+    <Setter Property="Background" Value="{StaticResource ColorBorderLight}"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="BorderThickness" Value="0 0 1 3"/>
+    <Setter Property="BorderBrush" Value="DimGray"/>
+  </Style>
+
+  <!-- HamburgerMenu -->
+  <Style x:Key="HamburgerMenuStyle" BasedOn="{StaticResource MahApps.Styles.HamburgerMenu}" TargetType="{x:Type mah:HamburgerMenu}">
+    <Setter Property="PaneBackground" Value="{StaticResource HDCLabsSecondary2}"/>
+    <Setter Property="PaneForeground" Value="{StaticResource HDCLabsSecondary1}"/>
+    <Setter Property="ShowSelectionIndicator" Value="False"/>
+    <Setter Property="HamburgerVisibility" Value="Visible"/>
+    <Setter Property="DisplayMode" Value="CompactInline"/>
+    <Setter Property="IsPaneOpen" Value="True"/>
+    <Setter Property="VerticalScrollBarOnLeftSide" Value="False"/>
+    <Setter Property="HamburgerWidth" Value="48"/>
+    <Setter Property="OpenPaneLength" Value="200"/>
+  </Style>
+
+  <!-- Border -->
+  <Style x:Key="BorderGridHeaderAM" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridAM}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderAMAlt" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridAMAlt}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderPM" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridPM}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderPMAlt" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridPMAlt}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderAMS" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridAMS}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderAMSAlt" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridAMSAlt}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderPMS" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridPMS}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderPMSAlt" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridPMSAlt}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderAMH" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridAMH}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderAMHAlt" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridAMHAlt}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderPMH" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridPMH}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="BorderGridHeaderPMHAlt" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="{StaticResource ColorGridPMHAlt}" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  
+  <Style x:Key="BorderHeader" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="#E9ECEF" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="5 0 0 5" />
+  </Style>
+  <Style x:Key="BorderContents" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="White" />
+    <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}" />
+    <Setter Property="BorderThickness" Value="0 1 1 1" />
+    <Setter Property="CornerRadius" Value="0 5 5 0" />
+  </Style>
+
+  <!-- Textblock -->
+  <Style x:Key="TextBlockGridRowHeader" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="Black" />
+  </Style>
+  <Style x:Key="TextBlockHeader" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="Margin" Value="5" />
+  </Style>
+  <Style x:Key="TextBlockContents" TargetType="{x:Type TextBlock}">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="Margin" Value="5" />
+  </Style>
+
+  <!-- Button -->
+  <Style x:Key="ButtonDefault" BasedOn="{StaticResource MahApps.Styles.Button}" TargetType="{x:Type Button}">
+    <Setter Property="mah:ControlsHelper.FocusBorderThickness" Value="1" />
+    <Setter Property="mah:ControlsHelper.FocusBorderBrush" Value="{StaticResource MahApps.Brushes.Accent}" />
+    <Setter Property="mah:ControlsHelper.MouseOverBorderBrush" Value="{StaticResource ColorBorderHover}" />
+  </Style>
+</ResourceDictionary>

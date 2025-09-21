@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <ScadaSelectedDebugTargetInstanceId>fbc337e6-d825-4159-94ce-94d0dc9b50d0</ScadaSelectedDebugTargetInstanceId>
+    <ScadaSelectedDebugTargetName>Service Engine PROJECT_GATEWAY</ScadaSelectedDebugTargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <ScadaSelectedDebugTargetInstanceId>fbc337e6-d825-4159-94ce-94d0dc9b50d0</ScadaSelectedDebugTargetInstanceId>
+    <ScadaSelectedDebugTargetName>Service Engine PROJECT_GATEWAY</ScadaSelectedDebugTargetName>
+  </PropertyGroup>
+</Project>

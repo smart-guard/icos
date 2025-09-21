@@ -1,0 +1,19 @@
+﻿<Window x:Class="iCos5BACnetScheduleED.View.WinSplash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="250" Width="500"
+        Background="#D2CFCD"
+        BorderBrush="#5D89b3"
+        BorderThickness="5"
+        WindowStyle="None"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+  <Grid>
+    <Image Source="/HDCLabsBACnetScheduleED;component/Resources/Company_Splash.png"
+           Height="150"/>
+
+  </Grid>
+</Window>
